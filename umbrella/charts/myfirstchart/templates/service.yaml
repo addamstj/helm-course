@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.global.service.name }}
+  labels:
+    app: nginx
+spec:
+  type: {{ .Values.global.service.type }}
+  ports:
+    - port: {{ .Values.global.service.port }}
+      nodePort: {{ .Values.global.service.nodePort }}
+      targetPort: {{ .Values.global.service.targetPort }}
+      protocol: TCP
+      name: http
+  selector:
+    app: nginx

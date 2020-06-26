@@ -1,0 +1,14 @@
+# Default values for challenge.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deployment:
+  name: challenge
+  image:
+    app: httpd
+    version: 2.4
+
+service:
+  name: challengesvc
+  type: NodePort
+  port: 31234

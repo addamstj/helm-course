@@ -1,0 +1,18 @@
+# Default values for myfirstchart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+
+deployment:
+  name: prodhelmdeployment
+  replicaCount: 3
+  image:
+    app: nginx
+    version: latest
+
+service:
+  name: prodhelmservice
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 31234

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  labels: {{- include "mylabels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        {{- include "nginx" . | indent 8}}
+        {{- if eq .Values.proxy.enable true -}}
+        {{- include "proxy" . | nindent 8 }}
+        {{- end -}}

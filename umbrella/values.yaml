@@ -1,0 +1,29 @@
+# Default values for myfirstchart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+global:
+  service:
+    name: globalservice
+    type: NodePort
+    port: 2380
+    targetPort: 2380
+    nodePort: 31234
+
+myfirstchart:
+  deployment:
+    name: subchartdeploy
+    replicaCount: 23
+    image:
+      app: nginx
+      version: latest
+
+deployment:
+  name: helmdeployment
+  replicaCount: 1
+  image:
+    app: nginx
+    version: latest
+
+proxy:
+  enable: false

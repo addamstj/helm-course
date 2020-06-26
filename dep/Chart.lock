@@ -1,0 +1,6 @@
+dependencies:
+- name: tomcat
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 0.4.1
+digest: sha256:9f6d1cdddab22e3a276e1099ddf72e9581fbf65940338ad659a193855d24dada
+generated: "2020-04-22T17:46:41.15496+01:00"
